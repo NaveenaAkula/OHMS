@@ -1,0 +1,1 @@
+web: gunicorn OHMS.wsgi --log-file -

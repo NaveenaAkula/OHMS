@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+ 
+{% block content %}
+
+  <app-root>Loading the app...</app-root>
+  <script type="text/javascript" src="{% static 'client/runtime.js' %}?version=7"></script>
+  <script type="text/javascript" src="{% static 'client/polyfills.js' %}?version=7"></script>
+  <script type="text/javascript" src="{% static 'client/styles.js' %}?version=7"></script>
+  <script type="text/javascript" src="{% static 'client/vendor.js' %}?version=7"></script>
+  <script type="text/javascript" src="{% static 'client/main.js' %}?version=7"></script>
+  <script type="text/javascript" src="{% static 'client/favicon.ico' %}?version=7"></script>
+
+{% endblock %}
