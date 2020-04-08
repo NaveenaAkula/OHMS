@@ -18,10 +18,10 @@
 <div>
   <img *ngIf="display== 'home'" style="width:100%; height: fit-content" mat-card-image src="static/client/assets/images/hotel.jpg" alt="Photo of a hotel">
 </div>
-<div style="display: flex;justify-content: center;margin-top: 33vh;padding-bottom: 100%;" *ngIf="display == 'login'">
+<div style="display: flex;justify-content: center;margin-top: 33vh;" *ngIf="display == 'login'">
   <app-login (display)= "openLogin($event)"  (fullCustomer)="setFullCustomer($event)" ></app-login>
 </div>
-<div *ngIf="display == 'signup'" style="display: flex;justify-content: center;margin-top: 10vh;padding-bottom: 100%;">
+<div *ngIf="display == 'signup'" style="display: flex;justify-content: center;margin-top: 10vh;">
   <app-sign-up (display)= "openSignUp($event)" ></app-sign-up> 
 </div>
 

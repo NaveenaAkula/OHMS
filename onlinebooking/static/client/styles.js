@@ -557,7 +557,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\fly2n\Desktop\Naveenacertificates\NaveenaUNOCourses\MSD\MSDASS3\MSDAssingment3\src\styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! C:\Users\fly2n\Desktop\Naveenacertificates\NaveenaUNOCourses\MSD\Assign3\HotelManagementSystem\OHMS\onlinebooking\MSDAssingment3\src\styles.css */"./src/styles.css");
 
 
 /***/ })
