@@ -1,0 +1,25 @@
+<div style="display: flex; flex-grow: 2; justify-content: center;padding-top: 10vh;">
+    <div style="flex-grow: 1;">
+        <mat-card  style="    width: 50%;
+        /* padding: 1rem; */
+        margin-left: 25%;" *ngIf="display == 'userHome'" >
+            <mat-card-header>
+                <mat-card-title>My Bookings</mat-card-title>
+            </mat-card-header>
+            <img class="img" mat-card-image src="static/client/assets/images/mybooking.png" alt="Photo of a Shiba Inu" (click)="setDisplay('myBooking')">
+        </mat-card>
+    </div>
+    
+    <div style="flex-grow: 1;">
+        <mat-card  *ngIf="display == 'userHome'" style="    width: 50%;
+        /* padding: 1rem; */
+        margin-left: 25%;">
+            <mat-card-header>
+                <mat-card-title>New Bookings</mat-card-title>
+            </mat-card-header>
+            <img class="img" mat-card-image src="static/client/assets/images/new booking.png" alt="Photo of a Shiba Inu" (click)="setDisplay('newBooking')">
+        </mat-card>
+    </div>
+</div>
+<app-new-booking *ngIf="display == 'newBooking'" (goBack)="display = $event"></app-new-booking>
+<app-my-booking *ngIf="display == 'myBooking'" (goBack)="display = $event"></app-my-booking>

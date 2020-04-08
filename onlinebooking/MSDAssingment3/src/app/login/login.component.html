@@ -1,0 +1,22 @@
+<form class="login-form" [formGroup]="loginFormGroup">
+  <mat-card class="login_mat-card login-card" >
+      <mat-card-header class="login-header">
+          <mat-card-title>Login</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+          <mat-form-field class="login-full-width">
+              <input matInput placeholder="UserName"  id="username" formControlName="userName">
+             
+          </mat-form-field>
+          <mat-form-field class="login-full-width">
+              <input matInput placeholder="Password" id="password" [type]="hide ? 'password' : 'text'" formControlName="password" required>
+             
+          </mat-form-field>
+          
+          <button mat-raised-button color="primary" type="submit" id="signin" (click)="Login()">SignIn</button>
+        
+          
+      </mat-card-content>
+  </mat-card>    
+
+</form>

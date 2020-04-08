@@ -1,0 +1,29 @@
+
+<mat-toolbar color="primary">
+  <div style="display: flex;flex-grow: 7;">
+    <div style="flex-grow: 5;">
+      <a routerLink="/home">LaVista Hotel</a>  
+  </div>
+  <div class= "name" style="flex-grow: 1;text-align: right;" *ngIf="fullName">
+    Hello {{fullName}}
+  </div>
+  <div>
+
+    <button class= "loginButton" style="margin-right: 0.5rem;margin-left: 2rem;" mat-raised-button (click)="displayComponet('login')">Login</button>
+
+    <button class= "signUpButton" mat-raised-button  (click)="displayComponet('signup')">SignUp</button>
+  </div>
+  </div>
+</mat-toolbar>
+<div>
+  <img *ngIf="display== 'home'" style="width:100%; height: fit-content" mat-card-image src="static/client/assets/images/hotel.jpg" alt="Photo of a hotel">
+</div>
+<div style="display: flex;justify-content: center;margin-top: 33vh;padding-bottom: 100%;" *ngIf="display == 'login'">
+  <app-login (display)= "openLogin($event)"  (fullCustomer)="setFullCustomer($event)" ></app-login>
+</div>
+<div *ngIf="display == 'signup'" style="display: flex;justify-content: center;margin-top: 10vh;padding-bottom: 100%;">
+  <app-sign-up (display)= "openSignUp($event)" ></app-sign-up> 
+</div>
+
+<app-user-home #userHome *ngIf="display == 'Customer'" ></app-user-home>
+<app-super-user-home *ngIf="display == 'SuperUser'"></app-super-user-home>

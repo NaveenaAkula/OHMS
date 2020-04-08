@@ -1,0 +1,15 @@
+.signup_matcard  {
+    /* margin-top: 10rem !important;
+    margin-left: 10.5rem !important; */
+    width: 27rem;
+  }
+
+  .signup {
+    background: rgb(88, 207, 49);
+    color: white;
+  }
+
+  .sUp_formfield {
+    width: 100%;
+    padding-right: 25rem;
+  }

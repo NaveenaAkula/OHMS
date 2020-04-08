@@ -1,0 +1,116 @@
+    <form [formGroup]="userNewRoomSelectionFormGroup">
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Available Rooms</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <mat-form-field hintLabel="Select Date" appearance="fill">
+            <mat-label>Check-in date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="checkIn">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field hintLabel="Select Date" appearance="fill" >
+            <mat-label>Check-out date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="checkOut">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field hintLabel="Select no of Rooms" appearance="fill">
+            <mat-label>Rooms</mat-label>
+            <mat-select formControlName="rooms">
+              <mat-option *ngFor= "let room of Rooms" [value]="room.value">
+                {{room.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field hintLabel="Select no of Adults" appearance="fill">
+            <mat-label>Adults</mat-label>
+            <mat-select formControlName="adults">
+              <mat-option *ngFor= "let adult of adults" [value]="adult.value">
+                {{adult.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field hintLabel="Select no of chilren" appearance="fill">
+            <mat-label>Child</mat-label>
+            <mat-select formControlName="children">
+              <mat-option *ngFor= "let child of children" [value]="child.value">
+                {{child.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          
+            <mat-card-actions>
+              <button mat-raised-button class="primary" (click)= "getRooms()">Get Rooms</button>
+              <button mat-raised-button class="primary" (click)= "cancelBooking()" *ngIf="!roomDetails">Cancel</button>
+            </mat-card-actions>
+      </div>
+      
+      <table mat-table [dataSource]="roomDetails" class="cd_table" *ngIf="roomDetails" matSort style="width: 100%;border: solid 1px rgba(0,0,0,.12);">
+
+        <!-- FristName Column -->
+        <ng-container matColumnDef="room_type">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Room Type </th>
+          <td mat-cell *matCellDef="let element"> 
+            <input type="checkbox" (click)="selectedRoom($event, element)"/>
+            {{element.room_type }} 
+          </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="bedOption">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Bed Option </th>
+          <td mat-cell *matCellDef="let element"> {{element.bedOption}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="price"> -->
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Price </th>
+          <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="view"> -->
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> View </th>
+          <td mat-cell *matCellDef="let element"> {{element.view}} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="availability">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Availability </th>
+          <td mat-cell *matCellDef="let element"> {{element.availability}} </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="room_start_date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Room Start Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.room_start_date | date: 'MM/dd/yyyy'}} </td>
+        </ng-container>
+        <ng-container matColumnDef="room_end_date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Room End Date </th>
+          <td mat-cell *matCellDef="let element"> {{element.room_end_date | date: 'MM/dd/yyyy'}} </td>
+        </ng-container>
+      
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+    </table>
+     
+    <mat-card-actions style="margin-top: 2rem;">
+      <button mat-raised-button  *ngIf="selectedRooms.length > 0" (click)= 'booking()'>Book Room</button>
+      <button mat-raised-button class="primary" (click)= "cancelBooking()" *ngIf="roomDetails">Cancel</button>
+    </mat-card-actions>
+    
+
+    </mat-card-content>
+
+    
+
+</mat-card>
+
+
+  
+
+        
+    
+    
+
+
+    </form>

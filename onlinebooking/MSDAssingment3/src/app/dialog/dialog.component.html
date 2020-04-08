@@ -1,0 +1,14 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Hi {{data.name}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content style="margin-top: 1rem">
+        <p style="font-size: 1.2rem">
+          {{data.message}}
+        </p>
+    <div mat-dialog-actions>
+      <button mat-raised-button color="primary" id="u_dialog" (click)="onOk()" cdkFocusInitial>Ok</button>
+    </div>
+    
+</mat-card-content>
+</mat-card>

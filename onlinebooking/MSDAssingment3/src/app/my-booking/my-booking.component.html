@@ -1,0 +1,64 @@
+
+  <mat-card class="cd_card common_table_card" style="padding-top: 10vh; padding-bottom: 100%;">
+    <mat-card-header class="common_table_header">
+        <mat-card-title>My Booking</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+
+      <div *ngIf="bookingDetails !== null && bookingDetails !== undefined">
+          <table mat-table [dataSource]="bookingDetails"  class="cd_table"  matSort style="width: 100%;border: solid 1px rgba(0,0,0,.12);">
+              <ng-container matColumnDef="checkIn">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Check In </th>
+                <td mat-cell *matCellDef="let element">{{element.checkIn | date: 'MM/dd/yyyy'}} 
+                </td>
+              </ng-container>
+
+              <ng-container matColumnDef="checkOut">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header>Check Out </th>
+                <td mat-cell *matCellDef="let element"> {{element.checkOut | date: 'MM/dd/yyyy'}} </td>
+              </ng-container>
+
+              <ng-container matColumnDef="no_of_adults">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Adults </th>
+                <td mat-cell *matCellDef="let element"> {{element.no_of_adults}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="no_of_children"> -->
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Children </th>
+                <td mat-cell *matCellDef="let element"> {{element.no_of_children}} </td>
+              </ng-container>
+          
+              <ng-container matColumnDef="reservation_date_time">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Reservation Date </th>
+                <td mat-cell *matCellDef="let element"> {{element.reservation_date_time | date: 'MM/dd/yyyy'}} </td>
+              </ng-container>
+              
+              <ng-container matColumnDef="totalPrice">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Price </th>
+                <td mat-cell *matCellDef="let element"> {{element.totalPrice}} </td>
+              </ng-container>
+              <ng-container matColumnDef="room">
+                <th mat-header-cell *matHeaderCellDef mat-sort-header> Room </th>
+                <td mat-cell *matCellDef="let element"> {{element.room}} </td>
+              </ng-container>
+            
+
+              <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+              <tr mat-row *matRowDef="let row; columns: displayedColumns;" ></tr>
+          </table>
+      </div>
+      
+      <div style="background-color: gray;
+      padding: 1rem;
+      font-style: bold;
+      font-weight: 300;
+      font-size: 1.5rem;
+      color: white;
+      border-radius: 1rem;
+      border: solid 2px darkolivegreen;" *ngIf="bookingDetails == null || bookingDetails == undefined">
+        Sorry! You don't have any booking with us. Please visit new booking.
+      </div>
+      <button mat-raised-button class="primary" (click)= "cancelBooking()" style="margin-top:2rem">Cancel</button>
+  </mat-card-content>
+  </mat-card>
+  

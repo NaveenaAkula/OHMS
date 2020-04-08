@@ -1,0 +1,50 @@
+<form [formGroup]="signUpFormGroup">
+  <mat-card class="signup_matcard">
+    <mat-card-header>
+      <mat-card-title>SignUp</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-form-field orderFormGroup class="sUp_formfield">
+        <mat-label>User Name</mat-label>
+        <input matInput placeholder="User Name" formControlName="userName">
+      </mat-form-field>
+  
+      <mat-form-field orderFormGroup class="sUp_formfield">
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Password" formControlName="password">
+      </mat-form-field>
+
+      <mat-form-field orderFormGroup class="sUp_formfield">
+          <mat-label>First Name</mat-label>
+          <input matInput placeholder="First Name" formControlName="firstName">
+      </mat-form-field>
+
+      <mat-form-field orderFormGroup class="sUp_formfield">
+          <mat-label>Last Name</mat-label>
+          <input matInput placeholder="Last Name" formControlName="lastName">
+      </mat-form-field>
+
+      <mat-form-field orderFormGroup class="sUp_formfield">
+          <mat-label>Email</mat-label>
+          <input matInput placeholder="Email" formControlName="email">
+      </mat-form-field>
+      
+      <mat-form-field orderFormGroup class="sUp_formfield">
+          <mat-label>Phone</mat-label>
+          <input matInput placeholder="Phone" formControlName="phone">
+      </mat-form-field>
+
+      <mat-form-field orderFormGroup class="sUp_formfield">
+        <mat-label>Address</mat-label>
+        <input matInput placeholder="address" formControlName="address">
+    </mat-form-field>
+
+      <mat-card-actions class="signUp_buttons">
+        <button mat-raised-button color="primary" id="u_addordersubmit" (click) = "createUser(signUpFormGroup.value)">Create User</button>
+        <button mat-raised-button (click) = "openLogin()">Cancel</button>
+      </mat-card-actions>
+
+    </mat-card-content>
+    
+  </mat-card>
+</form>

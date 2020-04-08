@@ -1,0 +1,19 @@
+/* .login-card {
+   
+    padding-right: 31rem;
+    padding-left: 37rem;
+    padding-top: 14rem;
+    padding-bottom: 19rem;
+  
+  } */
+  
+  .login-full-width {
+    width: 100%;
+  }
+
+  .login_mat-card {
+    /* margin-top: 16rem !important;
+    margin-left: 9.5rem !important; */
+    width: 28rem;
+
+  } 
