@@ -3,7 +3,9 @@
  
 {% block content %}
 
+  <div style="overflow-y:hidden">
   <app-root>Loading the app...</app-root>
+  </div>
   <script type="text/javascript" src="{% static 'client/runtime.js' %}?version=7"></script>
   <script type="text/javascript" src="{% static 'client/polyfills.js' %}?version=7"></script>
   <script type="text/javascript" src="{% static 'client/styles.js' %}?version=7"></script>
